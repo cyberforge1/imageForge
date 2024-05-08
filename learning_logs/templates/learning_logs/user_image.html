@@ -1,0 +1,103 @@
+{% extends 'learning_logs/base.html' %}
+
+{% block page_header %}
+<h1 id="page-header">Generated Image</h1>
+{% endblock page_header %}
+
+{% block content %}
+{% load static %}
+<style>
+      @import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Lugrasimo&family=Pacifico&family=Satisfy&display=swap");
+
+  #page-header {
+    color: white !important; /* Override other styles if necessary */
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-image: url('{% static "backgrounds/background.jpg" %}');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    color: white;
+  }
+
+  .centered-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Use full viewport height */
+    position: fixed; /* Change to 'fixed' */
+    top: 0; /* Stick to the top of the viewport */
+    left: 0; /* Stick to the left of the viewport */
+    right: 0; /* Stick to the right of the viewport */
+    bottom: 0; /* Stick to the bottom of the viewport */
+  }
+
+  .image-and-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .blue-square {
+    width: 600px; /* Set a fixed width */
+    height: auto; /* Allow dynamic height */
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 20px;
+    backdrop-filter: blur(25px);
+    overflow: hidden; /* Ensures no overflow of content */
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+  }
+
+  .blue-square img {
+    width: 350px; /* Set a fixed width */
+    height: 350px;
+    max-width: 100%; /* Maximum width is the size of the container */
+    max-height: 100%; /* Maximum height is the size of the container */
+    object-fit: contain; /* Ensures the image fits without cutting */
+    border-radius: 10px;
+    border: 1px solid white;
+
+  }
+
+  .blue-square p {
+    text-align: center;
+  }
+
+  .font4 {
+        font-family: "Cinzel", serif;
+      }
+</style>
+
+<div class="centered-div">
+  <div class="blue-square">
+    <div class="image-and-button-container">
+      <br />
+      {% if image %}
+      <img src="{{ image.get_image_url }}" alt="Generated Image" />
+      <br />
+      <br />
+      <p>{{ image.get_text }}</p>
+      {% else %}
+      <p>No image available.</p>
+      {% endif %}
+      <br/>
+      <a href="{% url 'imageGeneration:gallery' %}" class="btn btn-success">Continue to Gallery</a>
+      <br/>
+    </div>
+  </div>
+</div>
+{% endblock content %}

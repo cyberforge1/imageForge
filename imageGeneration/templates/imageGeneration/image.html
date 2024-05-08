@@ -1,0 +1,205 @@
+{% extends 'learning_logs/base.html' %} {% block page_header %}
+<h1 id="page-header">User History</h1>
+{% endblock page_header %} {% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Include Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Agdasima&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Lugrasimo&family=Pacifico&family=Satisfy&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Lugrasimo&family=Pacifico&family=Satisfy&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Lugrasimo&family=Pacifico&family=Satisfy&display=swap");
+
+      #page-header {
+        color: white !important; /* Override other styles if necessary */
+      }
+
+      .navbar,
+      .navbar * {
+        color: white !important;
+      }
+
+      html,
+      body {
+        height: auto; /* Change from 100% to auto */
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #f0f0f0; /* Set this to the desired background color */
+        background-image: url('{% static "backgrounds/lightening_compressed.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Add this line to fix the background */
+        margin: 0; /* Add this line to remove any default margin */
+        padding: 0; /* Add this line to remove any default padding */
+      }
+
+      .flex-container {
+        display: flex;
+        align-items: stretch; /* This will make div and image have the same height */
+      }
+
+      .flex-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+      }
+
+      .image-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 275px; /* Fixed width */
+        height: 275px; /* Fixed height */
+        min-width: 275px; /* Minimum width */
+        min-height: 275px; /* Minimum height */
+        overflow: hidden;
+        border-radius: 10px;
+        border: 1px solid #fff;
+        position: relative;
+        margin-left: 60px; /* Adjusted to have a consistent margin */
+        margin-right: 30px;
+      }
+
+      .info-div {
+        width: 80%;
+        height: 275px; /* Same height as the container */
+        backdrop-filter: blur(25px); /* Blur effect */
+        border: 1px solid white; /* Solid white border */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+        margin-right: 80px;
+      }
+
+      .text-div {
+        color: white;
+        margin-left: 30px;
+        font-size: 20px;
+        max-height: 100%; /* Ensures the div does not extend beyond the parent's height */
+        overflow: auto; /* Adds a scrollbar if content overflows vertically */
+      }
+
+      .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border-radius: 10px;
+      }
+
+      .larger-text {
+        font-size: 1.6rem; /* Increase the text size for ul elements */
+        width: 100%; /* Span the entire width of the container */
+      }
+
+      .rectangular-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch; /* This will make the div expand vertically */
+        padding: 10px;
+        backdrop-filter: blur(25px);
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        border: 1px solid #fff;
+        flex: 1; /* This will make the div expand to fill the remaining space */
+        color: whitesmoke;
+      }
+
+      .font4 {
+        font-family: "Cinzel", serif;
+      }
+
+      .font5 {
+        font-family: "Lugrasimo", cursive;
+      }
+
+      .font6 {
+        font-family: "Satisfy", cursive;
+      }
+
+      /* Add some styles to the modal */
+      .modal-content {
+        max-width: 100vw;
+        max-height: 70vh;
+        border-radius: 10px;
+        border: 1px solid #fff;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    {% if user.is_authenticated %}
+    <div class="container">
+      <div class="row">
+        {% for user_image in image %}
+        <div class="flex-box">
+          <!-- Adjust the Bootstrap column sizing as needed -->
+          <div class="image-container">
+            <a
+              href="#"
+              data-toggle="modal"
+              data-image="{{ user_image.get_image_url }}"
+            >
+              <img src="{{ user_image.get_image_url }}" alt="Image" />
+            </a>
+          </div>
+          <div class="info-div">
+            <div class="text-div">
+              <p class="font4">{{ user_image.get_text }}</p>
+              <p class="font6">• Added on: {{ user_image.get_datetime }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% else %}
+    <a href="{% url 'accounts:login' %}">Login to view User History</a>
+    {% endif %}
+
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Handle showing the image in the modal and applying the blur effect
+      $(document).ready(function () {
+        $('a[data-toggle="modal"]').on("click", function (e) {
+          e.preventDefault();
+          var imageSrc = $(this).find("img").attr("src");
+          $("#imageModal .modal-image").attr("src", imageSrc);
+          $("#imageModal").modal("show");
+          $("body").addClass("blur"); // Add the 'blur' class to the body
+        });
+      });
+
+      // Handle closing the modal and removing the blur effect
+      $(document).on("click", ".modal", function (e) {
+        if ($(e.target).hasClass("modal")) {
+          $("#imageModal").modal("hide");
+          $("body").removeClass("blur"); // Remove the 'blur' class from the body
+        }
+      });
+    </script>
+  </body>
+</html>
+{% endblock content %}

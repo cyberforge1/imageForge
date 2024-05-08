@@ -1,0 +1,20 @@
+{% extends "learning_logs/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block page_header %}
+  <h2 class="text-white">Registration.</h2>
+{% endblock page_header %}
+
+{% block content %}
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form action="{% url 'accounts:register' %}" method="post" class="card custom-bg p-4 text-white">
+        {% csrf_token %}
+        {{ form.as_div }}
+        <div class="text-center mt-3">
+          <button name="submit" class="btn btn-success">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,104 @@
+{% extends 'learning_logs/base.html' %} {% load static %} {% block content %}
+<style>
+  /* Custom style to remove border-bottom from header */
+  .custom-header {
+    border-bottom: none;
+  }
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-image: url('{% static "/backgrounds/background_compressed.jpg" %}');
+    background-size: cover;
+    background-position: center 50px;
+    background-repeat: no-repeat;
+    color: whitesmoke;
+  }
+
+  /* Your existing custom styles */
+  .custom-div {
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: transparent; /* Set background to transparent */
+    transform: translateY(-12px); /* Move the div up by 20 pixels */
+  }
+
+  .custom-div {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .custom-div h1 {
+    font-size: calc(3vw + 1rem);
+    max-width: 90%;
+  }
+
+  .custom-div p {
+    font-size: calc(1vw + 0.5rem);
+    max-width: 90%;
+  }
+
+  .custom-div .d-grid {
+    display: grid;
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Split the grid into two equal columns */
+    gap: 10px; /* Add some gap between the buttons */
+    max-width: 350px; /* Set a maximum width for the grid */
+    margin: 0 auto; /* Center the grid */
+  }
+
+  .custom-div .d-grid .btn {
+    width: 100%; /* Set buttons to take 100% of the available column width */
+    padding: 10px; /* Add some padding to the buttons for better appearance */
+  }
+
+  /* Additional styles for smaller screens */
+  @media (max-width: 767px) {
+    .custom-div .d-grid {
+      grid-template-columns: repeat(
+        1,
+        1fr
+      ); /* For smaller screens, make it a single column grid */
+      max-width: 250px; /* Adjust the maximum width for smaller screens */
+    }
+  }
+</style>
+
+<!-- Your custom content for the index page -->
+<div class="p-3 mb-4 rounded-3 custom-div" id="myDiv">
+  <div class="container-fluid py-4 custom-header">
+    <!-- Add the custom-header class here -->
+    <h1 class="display-3">Welcome to imageForge!</h1>
+    <p>Create randomly generated images with OpenAI's Dall•E 2 Model</p>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <a
+        href="{% url 'imageGeneration:gallery' %}"
+        class="btn btn-primary"
+        type="button"
+        >Visit Gallery</a
+      >
+      <a
+        href="{% url 'learning_logs:generation' %}"
+        class="btn btn-success"
+        type="button"
+        >Generation</a
+      >
+    </div>
+  </div>
+</div>
+{% endblock content %}
