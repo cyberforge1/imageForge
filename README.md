@@ -42,16 +42,11 @@ To create an image, users navigate to the generation page and click 'generate', 
 
 - post images to IG
 
-- ensure mobile responsive design
-
-- set a hard limit for number of images generated
-  - openAI and other
+- review mobile responsive design
 
 - refactor css and javascript code from templates into static folder
 
-- fix contact me button
-
-- add a download link to images
+- add a download link to image modals
 
 
 ## Start-up checklist
