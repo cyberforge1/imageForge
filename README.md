@@ -8,8 +8,8 @@ This is a full-stack Django-based web application that integrates ChatGPT 3.5 Tu
 This project is live! Check it out [here](https://imageforgelive-e87a9f628780.herokuapp.com/).
 
 ## Screenshot
-![imageForge Homepage](static/project-screenshot.png)
-![imageForge Generation](static/project-screenshot-2.png)
+![imageForge Homepage](static/backgrounds/project-screenshot.png)
+![imageForge Generation](static/backgrounds/project-screenshot-2.png)
 
 
 
