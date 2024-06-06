@@ -137,5 +137,5 @@ When a user is signed in and has a limited number of images generated, only a pa
 - Or send me an email at obj809@gmail.com
 <br />
 Thanks for your interest in this project. Feel free to reach out with any thoughts or questions.
-
+<br />
 Oliver Jenkins © 2024
