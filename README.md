@@ -1,4 +1,4 @@
-# imageForge - Full-Stack Django Web App
+# imageForge - Full-Stack Django Application
 
 ## Project Overview
 This is a full-stack Django-based web application that integrates the OPENAI API by using the ChatGPT 3.5 Turbo and DALL-E 2 Models to generate random and unique artwork.
