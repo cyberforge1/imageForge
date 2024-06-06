@@ -136,8 +136,6 @@ When a user is signed in and has a limited number of images generated, only a pa
 - Check out my [GitHub](https://github.com/cyberforge1) for more projects.
 - Or send me an email at obj809@gmail.com
 
-## Conclusion
-
 Thanks for your interest in this project. Feel free to reach out with any thoughts or questions.
 
 Oliver Jenkins © 2024
