@@ -138,4 +138,5 @@ When a user is signed in and has a limited number of images generated, only a pa
 <br />
 Thanks for your interest in this project. Feel free to reach out with any thoughts or questions.
 <br />
+<br />
 Oliver Jenkins © 2024
