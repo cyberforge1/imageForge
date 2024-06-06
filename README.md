@@ -18,9 +18,9 @@ This project is live! Check it out [here](https://imageforgelive-e87a9f628780.he
 - [Build Steps](#build-steps)
 - [Design Goals](#design-goals)
 - [Project Features](#project-features)
-- [Known Issues](#known-issues)
 - [Additions & Improvements](#additions--improvements)
 - [Learning Highlights](#learning-highlights)
+- [Known Issues](#known-issues)
 - [Challenges](#challenges)
 
 ## Goals & MVP
