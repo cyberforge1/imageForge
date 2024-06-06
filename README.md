@@ -118,7 +118,7 @@ To create an image, navigate to the generation page and click ‘generate’, th
 - Passing dynamic data into html templates
 - Creation of a complete MVC backend
 - Implementing API calls, handling the returned data and displaying it in the application
-- Setting up a local and remote databases
+- Setting up local and remote databases
 - Solidifying skills in Python scripting
 - Deploying aa Django application to Heroku 
 
@@ -135,9 +135,9 @@ When a user is signed in and has a limited number of images generated, only a pa
 - Visit my [LinkedIn](https://www.linkedin.com/in/obj809/) for more details.
 - Check out my [GitHub](https://github.com/cyberforge1) for more projects.
 - Or send me an email at obj809@gmail.com
-
-
+<br />
+<br />
+<br />
 Thanks for your interest in this project. Feel free to reach out with any thoughts or questions.
-<br />
-<br />
+
 Oliver Jenkins © 2024
