@@ -105,20 +105,20 @@ To create an image, navigate to the generation page and click ‘generate’, th
 
 ## Known Issues
 
-- When a user is signed in and has a limited number of images generated, only a partial background image is displayed on the User History page.
+When a user is signed in and has a limited number of images generated, only a partial background image is displayed on the User History page.
 
 ## Additions & Improvements
 
-- [] Create mobile responsive design and mobile navbar
-- [] Addition of delete functionality to the User History page
-- [] Refine the Generation Page background image
-- [] Improve styling on Login and Registration Pages
-- [] Add a download link on modals for images
-- [] Post images to Instagram
+- [ ] Create mobile responsive design and mobile navbar
+- [ ] Addition of delete functionality to the User History page
+- [ ] Refine the Generation Page background image
+- [ ] Improve styling on Login and Registration Pages
+- [ ] Add a download link on modals for images
+- [ ] Post images to Instagram
 
 ## Learning Highlights
 
-- This project started as a passion project and was my first full-stack application, helped teach me many fundamental aspects of web development including:
+- This project started as a passion project and my first full-stack application
 - Passing dynamic data into html templates
 - Creation of a complete MVC backend
 - Implementing API calls, handling the returned data and displaying it in the application
@@ -131,11 +131,12 @@ To create an image, navigate to the generation page and click ‘generate’, th
 - One major challenge in this project was creating a system that could store the images dynamically so that many users could access and interact with the application simultaneously. This was resolved by attaching an AWS S3 Bucket.
 - Another challenge was correcting the grammar and other inconsistencies of the locally generated prompts. This was resolved by making a call to the ChatGPT API.
 
-Thanks for your interest in this project. Feel free to reach out with any thoughts or questions.
-
-Oliver Jenkins © 2024
-
 ## Contact Me
 - Visit my [LinkedIn](https://www.linkedin.com/in/obj809/) for more details.
 - Check out my [GitHub](https://github.com/cyberforge1) for more projects.
 - Or send me an email at obj809@gmail.com
+
+
+Thanks for your interest in this project. Feel free to reach out with any thoughts or questions.
+
+Oliver Jenkins © 2024
