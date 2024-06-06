@@ -13,7 +13,7 @@ This project is live! Check it out [here](https://imageforgelive-e87a9f628780.he
 ![imageForge Generation](static/backgrounds/project-screenshot-2.png)
 
 ## Table of Contents
-- [Purpose](#purpose)
+- [Goals & Requirements](#goals--requirements)
 - [Tech Stack](#tech-stack)
 - [Build Steps](#build-steps)
 - [Design Goals](#design-goals)
@@ -21,7 +21,6 @@ This project is live! Check it out [here](https://imageforgelive-e87a9f628780.he
 - [Known Issues](#known-issues)
 - [Additions & Improvements](#additions--improvements)
 - [Learning Highlights](#learning-highlights)
-- [Change Logs](#change-logs)
 - [Challenges](#challenges)
 
 ## Goals & Requirements
