@@ -31,7 +31,7 @@ The aim of this application is to create a full-stack application in the Django 
 - CSS
 - Django 
 - Python
-- Javascript
+- JavaScript
 - DALL-E 2 API
 - ChatGPT 3.5 Turbo API
 - SQLite / Postgres
