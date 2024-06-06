@@ -99,8 +99,7 @@ To create an image, navigate to the generation page and click ‘generate’, th
 - [x] A collection of local data for creating randomized prompts
 - [x] A series of Python scripts that generate prompts and make API requests
 - [x] A user registration and login system
-- [x] Generation of unique prompts using the ChatGPT 3.5 Turbo Model
-- [x] Generation of unique images using the DALL-E 2 Model
+- [x] Generation of unique data using the ChatGPT 3.5 Turbo & DALL-E 2 Models
 - [x] A full-stack application to display this data
 
 ## Additions & Improvements
@@ -110,12 +109,10 @@ To create an image, navigate to the generation page and click ‘generate’, th
 - [ ] Refine the Generation Page background image
 - [ ] Improve styling on Login and Registration Pages
 - [ ] Add a download link on modals for images
-- [ ] Post images to Instagram
 
 ## Learning Highlights
 
 - This project started as a passion project and was my first full-stack application
-- Passing dynamic data into html templates
 - Creation of a complete MVC backend
 - Implementing API calls, handling the returned data and displaying it in the application
 - Setting up local and remote databases
