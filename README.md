@@ -118,7 +118,7 @@ When a user is signed in and has a limited number of images generated, only a pa
 
 ## Learning Highlights
 
-- This project started as a passion project and my first full-stack application
+- This project started as a passion project and was my first full-stack application
 - Passing dynamic data into html templates
 - Creation of a complete MVC backend
 - Implementing API calls, handling the returned data and displaying it in the application
@@ -136,6 +136,8 @@ When a user is signed in and has a limited number of images generated, only a pa
 - Check out my [GitHub](https://github.com/cyberforge1) for more projects.
 - Or send me an email at obj809@gmail.com
 
-Thanks for your interest in this project. Feel free to reach out with any thoughts or questions.
 
+Thanks for your interest in this project. Feel free to reach out with any thoughts or questions.
+<br />
+<br />
 Oliver Jenkins © 2024
