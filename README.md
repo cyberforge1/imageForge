@@ -128,8 +128,8 @@ When a user is signed in and has a limited number of images generated, only a pa
 
 ## Challenges
 
-- One major challenge in this project was creating a system that could store the images dynamically so that many users could access and interact with the application simultaneously. This was resolved by attaching an AWS S3 Bucket.
-- Another challenge was correcting the grammar and other inconsistencies of the locally generated prompts. This was resolved by making a call to the ChatGPT API.
+- Creating a system that could store the images dynamically so that many users could access and interact with the application simultaneously. This was resolved by attaching an AWS S3 Bucket.
+- Correcting the grammar and other inconsistencies of the locally generated prompts. This was resolved by making a call to the ChatGPT API.
 
 ## Contact Me
 - Visit my [LinkedIn](https://www.linkedin.com/in/obj809/) for more details.
