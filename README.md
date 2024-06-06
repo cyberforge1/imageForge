@@ -6,7 +6,7 @@ This is a full-stack Django-based web application that integrates the OPENAI API
 ## Deployment Link
 This project is live! Check it out [here](https://imageforgelive-e87a9f628780.herokuapp.com/).
 
-## Screenshot
+## Screenshots
 ![imageForge Homepage](static/backgrounds/project-screenshot.png)
 <br />
 <br />
