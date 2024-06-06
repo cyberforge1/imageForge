@@ -131,11 +131,13 @@ When a user is signed in and has a limited number of images generated, only a pa
 - Creating a system that could store the images dynamically so that many users could access and interact with the application simultaneously. This was resolved by attaching an AWS S3 Bucket.
 - Correcting the grammar and other inconsistencies of the locally generated prompts. This was resolved by making a call to the ChatGPT API.
 
-Thanks for your interest in this project. Feel free to reach out with any thoughts or questions.
-
-Oliver Jenkins © 2024
-
 ## Contact Me
 - Visit my [LinkedIn](https://www.linkedin.com/in/obj809/) for more details.
 - Check out my [GitHub](https://github.com/cyberforge1) for more projects.
 - Or send me an email at obj809@gmail.com
+
+## Conclusion
+
+Thanks for your interest in this project. Feel free to reach out with any thoughts or questions.
+
+Oliver Jenkins © 2024
