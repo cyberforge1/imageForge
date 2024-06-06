@@ -62,10 +62,10 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 275px; /* Fixed width */
-        height: 275px; /* Fixed height */
-        min-width: 275px; /* Minimum width */
-        min-height: 275px; /* Minimum height */
+        width: 250px; /* Fixed width */
+        height: 250px; /* Fixed height */
+        min-width: 250px; /* Minimum width */
+        min-height: 250px; /* Minimum height */
         overflow: hidden;
         border-radius: 10px;
         border: 1px solid #fff;
@@ -76,7 +76,7 @@
 
       .info-div {
         width: 80%;
-        height: 275px; /* Same height as the container */
+        height: 250px; /* Same height as the container */
         backdrop-filter: blur(25px); /* Blur effect */
         border: 1px solid white; /* Solid white border */
         display: flex;
@@ -172,6 +172,29 @@
         {% endfor %}
       </div>
     </div>
+
+    <!-- Modal Dialog -->
+    <div
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+      id="imageModal"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <img
+              src=""
+              class="modal-image rounded"
+              alt="Image"
+              style="width: 100%"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
     {% else %}
     <a href="{% url 'accounts:login' %}">Login to view User History</a>
     {% endif %}

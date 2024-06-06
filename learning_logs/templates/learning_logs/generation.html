@@ -1,100 +1,110 @@
-{% extends 'learning_logs/base.html' %} {% block page_header %}
-<h1 id="page-header">Generation</h1>
-{% endblock page_header %} {% block content %} {% load static %}
+{% extends 'learning_logs/base.html' %} {% block content %} {% load static %}
 
 <style>
-      .navbar,
-      .navbar * {
-        color: white !important;
-      }
+  /* Reset margins and padding */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-      #page-header {
+  .navbar,
+  .navbar * {
+    color: white !important;
+  }
+
+  #page-header {
     color: white !important; /* Override other styles if necessary */
   }
-      /* General style to apply whitesmoke color to all text */
-  body, h1 {
-    color: white;
+
+  /* General style to apply whitesmoke color to all text */
+  body,
+  h1 {
+    color: whitesmoke;
   }
 
   html,
   body {
-    height: auto;
-    margin: 0;
-    padding: 0;
-    color: whitesmoke; /* Set the text color for all text */
-
-    
+    overflow: hidden; /* Prevent scrolling */
   }
 
-body {
-  background-image: url('{% static "./backgrounds/explosion_compressed.jpg" %}');
-  background-size: cover;
-  background-position: center 50px;
-  background-repeat: no-repeat;
-}
+  body {
+    background-image: url('{% static "./backgrounds/explosion_compressed.jpg" %}');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  }
+
+  .new-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 85%;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .btn-generate-image {
+    background-color: #28a745;
+  }
 </style>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-    />
-    <style>
-      .button-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50vh; /* Adjust the height to make buttons 15% higher */
-      }
-      .button-container .btn-generate-image {
-        background-color: #28a745;
-      }
-    </style>
-  </head>
-  <body>
-    {% csrf_token %}
-    <div class="container">
-      <div
-        class="row justify-content-center align-items-center"
-        style="min-height: 100vh"
-      >
-        <div class="col-md-6">
-          <div class="text-center" style="margin-top: -75px">
-            <button
-              id="run-script-btn"
-              type="submit"
-              class="btn btn-success btn-lg"
-              style="font-size: 1.5em;"
-            >
-              GENERATE
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+/>
 
-    <!-- Include the jQuery library -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div class="new-container">
+  <div class="button-container">
+    <button
+      id="run-script-btn"
+      type="submit"
+      class="btn btn-success btn-lg btn-generate-image"
+      style="font-size: 1.5em"
+    >
+      GENERATE
+    </button>
+  </div>
+</div>
 
-    <!-- JavaScript code to handle the button click event -->
-    <script>
-      $(document).ready(function () {
-        // Handle button click event
-        $("#run-script-btn").click(function () {
-          $.ajax({
-            url: "/run_prompt_script/",
-            type: "GET",
-            success: function (data) {
-              // Process the response data here
-              console.log(data);
-              window.location.href = "/prompt/"; // Redirect to /prompt on success
-            },
-            error: function (xhr, errmsg, err) {
-              console.log(xhr.status + ": " + xhr.responseText);
-              window.location.href = "/prompt/"; // Redirect to /prompt on error
-            },
-          });
-        });
+<!-- Include the jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript code to handle the button click event -->
+<script>
+  $(document).ready(function () {
+    // Handle button click event
+    $("#run-script-btn").click(function () {
+      $.ajax({
+        url: "/run_prompt_script/",
+        type: "GET",
+        success: function (data) {
+          // Process the response data here
+          console.log(data);
+          window.location.href = "/prompt/"; // Redirect to /prompt on success
+        },
+        error: function (xhr, errmsg, err) {
+          console.log(xhr.status + ": " + xhr.responseText);
+          window.location.href = "/prompt/"; // Redirect to /prompt on error
+        },
       });
-    </script>
-  </body>
-</html>
+    });
+  });
+</script>
+
 {% endblock content %}

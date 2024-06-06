@@ -31,12 +31,9 @@
         border: 1px solid #ccc; /* Slight white border */
         border-radius: 10px; /* Rounded edges */
         padding: 20px; /* Add some padding to the content */
-        position: absolute; /* Set the position to absolute */
-        top: 50%; /* Move to 50% from the top */
-        left: 50%; /* Move to 50% from the left */
-        transform: translate(-50%, -50%); /* Center the div */
-        max-width: 40%; /* Set the maximum width of the div */
+        width: 600px;
         background-color: transparent;
+        margin-top: 20px; /* Add some margin to space it below the header */
       }
 
       /* CSS for the background image */
@@ -55,33 +52,57 @@
       .font4 {
         font-family: "Cinzel", serif;
       }
+
+      /* Ensure the content sits directly below the header */
+      .main-container {
+        margin-top: 20px; /* Adjust margin to your preference */
+      }
+
+      .div-centering {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+      }
     </style>
   </head>
   <body>
-    <!-- Rest of your code remains the same -->
-
-    <!-- Content of the rounded div -->
-    <div class="rounded-div text-center" style="width: 50%">
-      <form>
-        <br />
-        <div class="mb-3">
-          <p>{{ prompt.get_text }}</p>
+    <div class="container main-container">
+      <div class="row">
+        <div class="div-centering col-12">
+          <!-- Content of the rounded div -->
+          <div class="rounded-div text-center mx-auto">
+            <form>
+              <br />
+              <div class="mb-3">
+                <p>{{ prompt.get_text }}</p>
+              </div>
+              <br />
+              <div class="mb-3">
+                <button
+                  type="button"
+                  id="run-script-btn"
+                  class="btn btn-primary"
+                >
+                  New Prompt
+                </button>
+                <button
+                  type="button"
+                  id="run-image-btn"
+                  class="btn btn-success"
+                >
+                  Create Image
+                </button>
+              </div>
+              <i
+                id="spinner"
+                class="fas fa-spinner fa-spin"
+                style="display: none"
+              ></i>
+            </form>
+          </div>
         </div>
-        <br />
-        <div class="mb-3">
-          <button type="button" id="run-script-btn" class="btn btn-primary">
-            New Prompt
-          </button>
-          <button type="button" id="run-image-btn" class="btn btn-success">
-            Create Image
-          </button>
-        </div>
-        <i
-          id="spinner"
-          class="fas fa-spinner fa-spin"
-          style="display: none"
-        ></i>
-      </form>
+      </div>
     </div>
 
     <!-- Include Bootstrap JS -->

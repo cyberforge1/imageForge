@@ -1,103 +1,116 @@
-{% extends 'learning_logs/base.html' %}
-
-{% block page_header %}
+{% extends 'learning_logs/base.html' %} {% block page_header %}
 <h1 id="page-header">Generated Image</h1>
-{% endblock page_header %}
-
-{% block content %}
-{% load static %}
-<style>
+{% endblock page_header %} {% block content %} {% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Generated Image</title>
+    <!-- Include Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+    />
+    <style>
       @import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Lugrasimo&family=Pacifico&family=Satisfy&display=swap");
 
-  #page-header {
-    color: white !important; /* Override other styles if necessary */
-  }
+      #page-header {
+        color: white !important; /* Override other styles if necessary */
+      }
 
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-image: url('{% static "backgrounds/background.jpg" %}');
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        color: white;
+      }
 
-  body {
-    background-image: url('{% static "backgrounds/background.jpg" %}');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    color: white;
-  }
+      .main-container {
+        margin-top: 20px; /* Adjust margin to your preference */
+      }
 
-  .centered-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Use full viewport height */
-    position: fixed; /* Change to 'fixed' */
-    top: 0; /* Stick to the top of the viewport */
-    left: 0; /* Stick to the left of the viewport */
-    right: 0; /* Stick to the right of the viewport */
-    bottom: 0; /* Stick to the bottom of the viewport */
-  }
+      .div-centering {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60vh; /* Adjust height to ensure it fits within the viewport */
+        margin-top: 20px; /* Optional: Adjust to match header margin */
+        padding: 20px; /* Add padding to avoid content touching the edges */
+        box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+      }
 
-  .image-and-button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-  }
+      .blue-square {
+        margin-top: 20px;
+        width: 100%;
+        max-width: 500px; /* Set a maximum width */
+        height: auto; /* Allow dynamic height */
+        max-height: 80vh; /* Set a maximum height relative to the viewport */
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 20px;
+        backdrop-filter: blur(25px);
+        overflow: hidden; /* Ensures no overflow of content */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center the content horizontally */
+        align-items: center; /* Center the content vertically */
+        box-sizing: border-box; /* Include padding in the element's total width and height */
+      }
 
-  .blue-square {
-    width: 600px; /* Set a fixed width */
-    height: auto; /* Allow dynamic height */
-    background-color: transparent;
-    border: 1px solid white;
-    border-radius: 10px;
-    padding: 20px;
-    backdrop-filter: blur(25px);
-    overflow: hidden; /* Ensures no overflow of content */
-    display: flex;
-    justify-content: center; /* Center the content horizontally */
-    align-items: center; /* Center the content vertically */
-  }
+      .blue-square img {
+        width: 100%; /* Make the image take up the full width of its container */
+        max-width: 350px; /* Set a maximum width */
+        height: auto; /* Allow dynamic height */
+        max-height: 350px; /* Set a maximum height */
+        object-fit: contain; /* Ensures the image fits without cutting */
+        border-radius: 10px;
+        border: 1px solid white;
+      }
 
-  .blue-square img {
-    width: 350px; /* Set a fixed width */
-    height: 350px;
-    max-width: 100%; /* Maximum width is the size of the container */
-    max-height: 100%; /* Maximum height is the size of the container */
-    object-fit: contain; /* Ensures the image fits without cutting */
-    border-radius: 10px;
-    border: 1px solid white;
+      .blue-square p {
+        text-align: center;
+        margin-top: 20px; /* Add some spacing between image and text */
+        word-wrap: break-word; /* Ensures long text wraps properly */
+        max-width: 100%; /* Ensures text stays within the container */
+      }
 
-  }
-
-  .blue-square p {
-    text-align: center;
-  }
-
-  .font4 {
+      .font4 {
         font-family: "Cinzel", serif;
       }
-</style>
-
-<div class="centered-div">
-  <div class="blue-square">
-    <div class="image-and-button-container">
-      <br />
-      {% if image %}
-      <img src="{{ image.get_image_url }}" alt="Generated Image" />
-      <br />
-      <br />
-      <p>{{ image.get_text }}</p>
-      {% else %}
-      <p>No image available.</p>
-      {% endif %}
-      <br/>
-      <a href="{% url 'imageGeneration:gallery' %}" class="btn btn-success">Continue to Gallery</a>
-      <br/>
+    </style>
+  </head>
+  <body>
+    <div class="container main-container">
+      <div class="row">
+        <div class="div-centering col-12">
+          <!-- Content of the blue square -->
+          <div class="blue-square text-center mx-auto">
+            <div class="image-and-button-container">
+              {% if image %}
+              <img src="{{ image.get_image_url }}" alt="Generated Image" />
+              <p>{{ image.get_text }}</p>
+              {% else %}
+              <p>No image available.</p>
+              {% endif %}
+              <a
+                href="{% url 'imageGeneration:gallery' %}"
+                class="btn btn-success mt-3"
+              >
+                Continue to Gallery
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
 {% endblock content %}
