@@ -103,10 +103,6 @@ To create an image, navigate to the generation page and click ‘generate’, th
 - [x] Generation of unique images using the DALL-E 2 Model
 - [x] A full-stack application to display this data
 
-## Known Issues
-
-When a user is signed in and has a limited number of images generated, only a partial background image is displayed on the User History page.
-
 ## Additions & Improvements
 
 - [ ] Create mobile responsive design and mobile navbar
@@ -125,6 +121,10 @@ When a user is signed in and has a limited number of images generated, only a pa
 - Setting up a local and remote databases
 - Solidifying skills in Python scripting
 - Deploying aa Django application to Heroku 
+
+## Known Issues
+
+When a user is signed in and has a limited number of images generated, only a partial background image is displayed on the User History page.
 
 ## Challenges
 
