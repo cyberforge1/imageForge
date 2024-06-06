@@ -23,7 +23,7 @@ This project is live! Check it out [here](https://imageforgelive-e87a9f628780.he
 - [Learning Highlights](#learning-highlights)
 - [Challenges](#challenges)
 
-## Goals & Requirements
+## <a id="goals--requirements"></a>Goals & Requirements
 The aim of this application is to create a full-stack application in the Django framework that can create random and unique images by leveraging modern tools including the OpenAI API.
 
 ## Tech Stack
