@@ -125,4 +125,4 @@ This project started as a passion project and was my first full-stack applicatio
 
 Thanks for your interest in this project. Feel free to reach out with any thoughts or questions.
 
-Created by Oliver Jenkins © 2024
+Oliver Jenkins © 2024
