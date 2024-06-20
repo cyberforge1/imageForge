@@ -52,7 +52,7 @@ def upload_image_to_s3(image_file):
     except FileNotFoundError:
         print("The file was not found!")
     except NoCredentialsError:
-        print("Credentials not available!")
+        print("Credentials not available!!")
 
 
 upload_image_to_s3(s3_key)
