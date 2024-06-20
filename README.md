@@ -117,7 +117,7 @@ This project started as a passion project and was my first full-stack applicatio
 - Implementing API calls, handling the returned data and displaying it in the application
 - Setting up local and remote databases
 - Solidifying skills in Python scripting
-- Deploying aa Django application to Heroku 
+- Deploying a Django application to Heroku 
 
 ## Known Issues
 
